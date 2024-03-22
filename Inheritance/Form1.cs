@@ -5,6 +5,7 @@ namespace Inheritance
     public partial class Form1 : Form
     {
         List<Drinks> drinksList = new List<Drinks>();
+        private Stack<string> drinkQueue = new Stack<string>();
         public Form1()
         {
             InitializeComponent();
@@ -19,23 +20,43 @@ namespace Inheritance
         {
             this.drinksList.Clear();
             var rnd = new Random();
+
+            // Очистка стека перед заполнением новыми элементами
+            drinkQueue.Clear();
+
             for (var i = 0; i < 10; ++i)
             {
-                switch (rnd.Next() % 3)
+                int nextDrink = rnd.Next() % 3;
+                switch (nextDrink)
                 {
                     case 0:
                         this.drinksList.Add(Juice.Generate());
+                        drinkQueue.Push("Сок");
                         break;
                     case 1:
                         this.drinksList.Add(Soda.Generate());
+                        drinkQueue.Push("Газировка");
                         break;
                     case 2:
                         this.drinksList.Add(Alcohol.Generate());
+                        drinkQueue.Push("Алкоголь");
                         break;
                 }
             }
             ShowInfo();
+            DisplayQueue();
         }
+
+
+        private void DisplayQueue()
+        {
+            lstDrinkQueue.Items.Clear(); // Очистка списка перед добавлением новых элементов
+            foreach (var drink in drinkQueue)
+            {
+                lstDrinkQueue.Items.Insert(0, drink);
+            }
+        }
+
 
         private void ShowInfo()
         {

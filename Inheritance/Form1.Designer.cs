@@ -32,6 +32,7 @@
             txtInfo = new RichTextBox();
             btnGet = new Button();
             txtOut = new RichTextBox();
+            lstDrinkQueue = new ListBox();
             SuspendLayout();
             // 
             // btnRefill
@@ -50,13 +51,13 @@
             txtInfo.Location = new Point(12, 47);
             txtInfo.Name = "txtInfo";
             txtInfo.ReadOnly = true;
-            txtInfo.Size = new Size(407, 66);
+            txtInfo.Size = new Size(176, 84);
             txtInfo.TabIndex = 1;
             txtInfo.Text = "";
             // 
             // btnGet
             // 
-            btnGet.Location = new Point(280, 119);
+            btnGet.Location = new Point(280, 135);
             btnGet.Name = "btnGet";
             btnGet.Size = new Size(139, 176);
             btnGet.TabIndex = 2;
@@ -66,17 +67,27 @@
             // 
             // txtOut
             // 
-            txtOut.Location = new Point(12, 119);
+            txtOut.Location = new Point(12, 137);
             txtOut.Name = "txtOut";
             txtOut.Size = new Size(262, 174);
             txtOut.TabIndex = 3;
             txtOut.Text = "";
             // 
+            // lstDrinkQueue
+            // 
+            lstDrinkQueue.AllowDrop = true;
+            lstDrinkQueue.FormattingEnabled = true;
+            lstDrinkQueue.Location = new Point(194, 47);
+            lstDrinkQueue.Name = "lstDrinkQueue";
+            lstDrinkQueue.Size = new Size(225, 84);
+            lstDrinkQueue.TabIndex = 4;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(431, 305);
+            ClientSize = new Size(431, 324);
+            Controls.Add(lstDrinkQueue);
             Controls.Add(txtOut);
             Controls.Add(btnGet);
             Controls.Add(txtInfo);
@@ -93,5 +104,6 @@
         private RichTextBox txtInfo;
         private Button btnGet;
         private RichTextBox txtOut;
+        private ListBox lstDrinkQueue;
     }
 }
