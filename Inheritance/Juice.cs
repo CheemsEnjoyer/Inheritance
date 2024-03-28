@@ -28,7 +28,8 @@ namespace Inheritance
             {
                 volume = rnd.Next() % 100,
                 type = (FruitType)rnd.Next(3),
-                hasPulp = rnd.Next() % 2 == 0   
+                hasPulp = rnd.Next() % 2 == 0,
+                Image = Properties.Resources.juice
             };
         }
     }

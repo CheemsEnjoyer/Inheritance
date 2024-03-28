@@ -33,13 +33,15 @@
             btnGet = new Button();
             txtOut = new RichTextBox();
             lstDrinkQueue = new ListBox();
+            pctrBxDrnk = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pctrBxDrnk).BeginInit();
             SuspendLayout();
             // 
             // btnRefill
             // 
             btnRefill.Location = new Point(12, 12);
             btnRefill.Name = "btnRefill";
-            btnRefill.Size = new Size(407, 29);
+            btnRefill.Size = new Size(488, 29);
             btnRefill.TabIndex = 0;
             btnRefill.Text = "Перезаполнить";
             btnRefill.UseVisualStyleBackColor = true;
@@ -51,15 +53,15 @@
             txtInfo.Location = new Point(12, 47);
             txtInfo.Name = "txtInfo";
             txtInfo.ReadOnly = true;
-            txtInfo.Size = new Size(176, 84);
+            txtInfo.Size = new Size(257, 155);
             txtInfo.TabIndex = 1;
             txtInfo.Text = "";
             // 
             // btnGet
             // 
-            btnGet.Location = new Point(280, 135);
+            btnGet.Location = new Point(361, 208);
             btnGet.Name = "btnGet";
-            btnGet.Size = new Size(139, 176);
+            btnGet.Size = new Size(139, 198);
             btnGet.TabIndex = 2;
             btnGet.Text = "Взять";
             btnGet.UseVisualStyleBackColor = true;
@@ -67,9 +69,9 @@
             // 
             // txtOut
             // 
-            txtOut.Location = new Point(12, 137);
+            txtOut.Location = new Point(12, 208);
             txtOut.Name = "txtOut";
-            txtOut.Size = new Size(262, 174);
+            txtOut.Size = new Size(343, 197);
             txtOut.TabIndex = 3;
             txtOut.Text = "";
             // 
@@ -77,16 +79,25 @@
             // 
             lstDrinkQueue.AllowDrop = true;
             lstDrinkQueue.FormattingEnabled = true;
-            lstDrinkQueue.Location = new Point(194, 47);
+            lstDrinkQueue.Location = new Point(275, 47);
             lstDrinkQueue.Name = "lstDrinkQueue";
-            lstDrinkQueue.Size = new Size(225, 84);
+            lstDrinkQueue.Size = new Size(225, 144);
             lstDrinkQueue.TabIndex = 4;
+            // 
+            // pctrBxDrnk
+            // 
+            pctrBxDrnk.Location = new Point(506, 12);
+            pctrBxDrnk.Name = "pctrBxDrnk";
+            pctrBxDrnk.Size = new Size(349, 393);
+            pctrBxDrnk.TabIndex = 5;
+            pctrBxDrnk.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(431, 324);
+            ClientSize = new Size(867, 418);
+            Controls.Add(pctrBxDrnk);
             Controls.Add(lstDrinkQueue);
             Controls.Add(txtOut);
             Controls.Add(btnGet);
@@ -95,6 +106,7 @@
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)pctrBxDrnk).EndInit();
             ResumeLayout(false);
         }
 
@@ -105,5 +117,6 @@
         private Button btnGet;
         private RichTextBox txtOut;
         private ListBox lstDrinkQueue;
+        private PictureBox pctrBxDrnk;
     }
 }

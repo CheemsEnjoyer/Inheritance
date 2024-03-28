@@ -28,7 +28,8 @@ namespace Inheritance
             {
                 volume = rnd.Next() % 100,
                 type = (alcoholType)rnd.Next(3),
-                strength = rnd.Next() % 100
+                strength = rnd.Next() % 100,
+                Image = Properties.Resources.alcohol
             };
         }
     }

@@ -1,3 +1,4 @@
+using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
 
 namespace Inheritance
@@ -26,7 +27,7 @@ namespace Inheritance
 
             for (var i = 0; i < 10; ++i)
             {
-                int nextDrink = rnd.Next() % 3;
+                int nextDrink = rnd.Next() % 4;
                 switch (nextDrink)
                 {
                     case 0:
@@ -40,6 +41,10 @@ namespace Inheritance
                     case 2:
                         this.drinksList.Add(Alcohol.Generate());
                         drinkQueue.Push("Алкоголь");
+                        break;
+                    case 3:
+                        this.drinksList.Add(Tea.Generate());
+                        drinkQueue.Push("Чай");
                         break;
                 }
             }
@@ -64,7 +69,7 @@ namespace Inheritance
             int juiceCount = 0;
             int soadCount = 0;
             int alcoholCount = 0;
-
+            int teaCount = 0;
             // пройдемся по всему списку
             foreach (var drink in this.drinksList)
             {
@@ -80,11 +85,15 @@ namespace Inheritance
                 {
                     alcoholCount += 1;
                 }
+                else if (drink is Tea)
+                {
+                    teaCount += 1;
+                }
             }
 
-            txtInfo.Text = "Сок\tГзрвк\tАлко";
+            txtInfo.Text = "Сок\tГзрвк\tАлко\tЧай";
             txtInfo.Text += "\n";
-            txtInfo.Text += String.Format("{0}\t{1}\t{2}", juiceCount, soadCount, alcoholCount);
+            txtInfo.Text += String.Format("{0}\t{1}\t{2}\t{3}", juiceCount, soadCount, alcoholCount, teaCount);
         }
 
         private void btnGet_Click(object sender, EventArgs e)
@@ -98,8 +107,9 @@ namespace Inheritance
             var drink = this.drinksList[0];
             this.drinksList.RemoveAt(0);
 
+            pctrBxDrnk.Image = drink.Image;
             txtOut.Text = drink.GetInfo();
-
+            lstDrinkQueue.Items.RemoveAt(0);
             ShowInfo();
         }
     }

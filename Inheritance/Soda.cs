@@ -28,7 +28,8 @@ namespace Inheritance
             {
                 volume = rnd.Next() % 100,
                 type = (sodaType)rnd.Next(3),
-                bubles = rnd.Next() % 100
+                bubles = rnd.Next() % 100,
+                Image = Properties.Resources.soda
             };
         }
     }
